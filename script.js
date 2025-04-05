@@ -29,9 +29,11 @@ imagesLoaded(document.body, { background: true }, () => {
 
   tl.from([img1, img2, img3, img4, outlineBox], {
     scale: 0,
-    duration: 0.8,
+    duration: 2.8,
     opacity: 0,
-    stagger: 0.1,
+    stagger: 0.6,
+    ease: "power4.out",
+    force3d: true,
   });
 
   tl.from(".outline-text", {
