@@ -22,7 +22,8 @@ body {
   display: flex;
   flex-direction: column;
   align-items: center;
-  width: 100%;
+  width: 80%;
+  max-width: 1200px;
 }
 .font-main {
   font-family: "Druk Wide Bold", sans-serif;
