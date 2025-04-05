@@ -14,14 +14,13 @@ let lastScroll = 0;
 
 document.body.classList.add("loading");
 
-window.onload = () => {
+imagesLoaded(document.body, { background: true }, () => {
   const tl = gsap.timeline({
     onComplete: () => {
       document.body.classList.remove("loading");
       initInteractions();
     },
   });
-
   tl.from(".title h1", {
     y: 200,
     duration: 0.7,
@@ -39,7 +38,7 @@ window.onload = () => {
     opacity: 0,
     duration: 0.7,
   });
-};
+});
 
 function initInteractions() {
   window.addEventListener("scroll", () => {
