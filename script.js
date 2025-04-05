@@ -9,47 +9,64 @@ let img4 = document.querySelector(".img4");
 let title = document.querySelector(".title");
 let imgText = document.querySelectorAll(".img-text, .img1-text");
 let outlineBox = document.querySelectorAll(".outline-box");
-
-var tl = gsap.timeline();
-tl.from(".title h1", {
-  y: 200,
-  duration: 0.7,
-  stagger: 0.2,
-});
-
-tl.from([img1, img2, img3, img4, outlineBox], {
-  scale: 0,
-  duration: 0.8,
-  opacity: 0,
-  stagger: 0.1,
-});
-tl.from(".outline-text", {
-  opacity: 0,
-  duration: 0.7,
-});
-
-let lastScroll = 0;
 let navbar = document.querySelector(".navbar");
+let lastScroll = 0;
 
-window.addEventListener("scroll", () => {
-  let currentScroll = window.scrollY;
+document.body.classList.add("loading");
 
-  if (currentScroll > lastScroll && currentScroll > 50) {
-    gsap.to(navbar, {
-      y: -100,
-      duration: 0.3,
-      ease: "power3.out",
-    });
-  } else {
-    gsap.to(navbar, {
-      y: 0,
-      duration: 0.3,
-      ease: "power3.out",
-    });
-  }
+window.onload = () => {
+  const tl = gsap.timeline({
+    onComplete: () => {
+      document.body.classList.remove("loading");
+      initInteractions();
+    },
+  });
 
-  lastScroll = currentScroll;
-});
+  tl.from(".title h1", {
+    y: 200,
+    duration: 0.7,
+    stagger: 0.2,
+  });
+
+  tl.from([img1, img2, img3, img4, outlineBox], {
+    scale: 0,
+    duration: 0.8,
+    opacity: 0,
+    stagger: 0.1,
+  });
+
+  tl.from(".outline-text", {
+    opacity: 0,
+    duration: 0.7,
+  });
+};
+
+function initInteractions() {
+  window.addEventListener("scroll", () => {
+    let currentScroll = window.scrollY;
+
+    if (currentScroll > lastScroll && currentScroll > 50) {
+      gsap.to(navbar, {
+        y: -100,
+        duration: 0.3,
+        ease: "power3.out",
+      });
+    } else {
+      gsap.to(navbar, {
+        y: 0,
+        duration: 0.3,
+        ease: "power3.out",
+      });
+    }
+
+    lastScroll = currentScroll;
+  });
+
+  setupDiv(div1, img1, [img2, img3, img4, title]);
+  setupDiv(div2, img2, [img1, img3, img4, title]);
+  setupDiv(div3, img3, [img1, img2, img4, title]);
+  setupDiv(div4, img4, [img1, img2, img3, title]);
+}
 
 function setupDiv(div, img, otherImgs) {
   div.addEventListener("mouseenter", () => {
@@ -63,6 +80,7 @@ function setupDiv(div, img, otherImgs) {
       opacity: 0,
       duration: 0.1,
     });
+
     gsap.to(imgText, {
       opacity: 1,
       duration: 0.3,
@@ -89,24 +107,15 @@ function setupDiv(div, img, otherImgs) {
       duration: 2,
       ease: "power3.out",
     });
+
     gsap.to(otherImgs, {
       opacity: 1,
       duration: 0.1,
     });
+
     gsap.to(imgText, {
       opacity: 0,
       duration: 0.3,
     });
   });
 }
-
-setupDiv(div1, img1, [img2, img3, img4, title]);
-setupDiv(div2, img2, [img1, img3, img4, title]);
-setupDiv(div3, img3, [img1, img2, img4, title]);
-setupDiv(div4, img4, [img1, img2, img3, title]);
-
-gsap.from(".navbar", {
-  scrollTrigger: {
-    y: -100,
-  },
-});

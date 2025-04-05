@@ -13,6 +13,9 @@ body {
 body::-webkit-scrollbar {
   display: none;
 }
+body.loading * {
+  pointer-events: none;
+}
 
 @font-face {
   font-family: "Druk Wide Bold";
