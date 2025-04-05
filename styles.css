@@ -1,0 +1,173 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+html,
+body {
+  height: 100%;
+  width: 100%;
+}
+body {
+  background-color: #212121;
+  overflow-x: hidden;
+}
+.container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  width: 100%;
+}
+.font-main {
+  font-family: "Druk Wide Bold", sans-serif;
+}
+.font-child {
+  font-family: "Arimo", sans-serif;
+  font-optical-sizing: auto;
+  font-weight: 400;
+  font-style: normal;
+}
+.navbar {
+  overflow: hidden;
+}
+.navbar h1 {
+  color: white;
+  text-align: center;
+  font-size: 50px;
+}
+.navbar ul {
+  color: white;
+  font-size: 30px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  list-style-type: none;
+}
+.lang {
+  text-decoration: underline;
+  text-underline-offset: 6px;
+}
+.hero {
+  position: relative;
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  grid-template-rows: 1fr 1fr;
+  column-gap: 10px;
+  height: 1200px;
+  width: 150%;
+  margin-top: 20vh;
+}
+.div1 {
+  position: relative;
+  height: 100%;
+  width: 100%;
+}
+.div2 {
+  position: relative;
+  height: 100%;
+  width: 100%;
+}
+.div3 {
+  position: relative;
+  height: 100%;
+  width: 100%;
+}
+.div4 {
+  position: relative;
+  height: 100%;
+  width: 100%;
+}
+.hero img {
+  height: 400px;
+  width: 700px;
+}
+.title {
+  position: absolute;
+  top: 0;
+  color: #ffffff;
+  z-index: 20;
+  font-size: 180px;
+  text-align: center;
+  line-height: 1;
+  overflow: hidden;
+}
+.title h1 {
+  font-size: 180px;
+  text-align: center;
+  line-height: 1;
+  overflow: hidden;
+}
+span {
+  overflow: hidden;
+}
+.img1 {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+}
+.img2 {
+  position: absolute;
+  top: 0;
+  left: 0;
+}
+.img3 {
+  position: absolute;
+  bottom: 0;
+  right: 0;
+}
+.img4 {
+  position: absolute;
+  top: 0;
+  right: 0;
+}
+.img1,
+.img2,
+.img3,
+.img4,
+.title {
+  border: 0px solid white;
+  transition: border 0.3s ease;
+}
+.overlay {
+  z-index: 50;
+}
+.outline-text {
+  font-size: 180px;
+  font-weight: 900;
+  color: transparent;
+  -webkit-text-stroke: 3px rgba(255, 255, 255, 0.1);
+  text-transform: uppercase;
+  position: absolute;
+  z-index: 0;
+}
+
+.outline-box {
+  border: 3px solid rgba(255, 255, 255, 0.1);
+  width: 700px;
+  height: 400px;
+  position: absolute;
+  z-index: 0;
+}
+.hide {
+  overflow: hidden;
+}
+.img1-text {
+  position: absolute;
+  color: #ffffff;
+  bottom: -150px;
+  right: -300px;
+  opacity: 0;
+}
+.img1-text h1 {
+  font-size: 80px;
+}
+.img-text {
+  position: absolute;
+  color: #ffffff;
+  bottom: -80px;
+  right: -300px;
+  opacity: 0;
+}
+.img-text h1 {
+  font-size: 80px;
+}
