@@ -7,7 +7,13 @@ html,
 body {
   height: 100%;
   width: 100%;
+  scrollbar-width: none;
+  -ms-overflow-style: none;
 }
+body::-webkit-scrollbar {
+  display: none;
+}
+
 @font-face {
   font-family: "Druk Wide Bold";
   src: url("./druk-wide-bold/DrukWideBold.ttf") format("truetype");
@@ -40,11 +46,12 @@ body {
 .navbar h1 {
   color: white;
   text-align: center;
-  font-size: 50px;
+  font-size: 22px;
+  font-weight: 1000;
 }
 .navbar ul {
   color: white;
-  font-size: 30px;
+  font-size: 15px;
   display: flex;
   justify-content: center;
   align-items: center;
@@ -60,8 +67,8 @@ body {
   grid-template-columns: 1fr 1fr;
   grid-template-rows: 1fr 1fr;
   column-gap: 10px;
-  height: 1200px;
-  width: 150%;
+  height: 600px;
+  width: 100%;
   margin-top: 20vh;
 }
 .div1 {
@@ -85,21 +92,22 @@ body {
   width: 100%;
 }
 .hero img {
-  height: 400px;
-  width: 700px;
+  height: 200px;
+  width: 350px;
 }
 .title {
+  margin-top: 30px;
   position: absolute;
   top: 0;
   color: #ffffff;
   z-index: 20;
-  font-size: 180px;
+  font-size: 20px;
   text-align: center;
   line-height: 1;
   overflow: hidden;
 }
 .title h1 {
-  font-size: 180px;
+  font-size: 90px;
   text-align: center;
   line-height: 1;
   overflow: hidden;
@@ -139,19 +147,19 @@ span {
   z-index: 50;
 }
 .outline-text {
-  font-size: 180px;
-  font-weight: 900;
+  font-size: 80px;
+  font-weight: 600;
   color: transparent;
-  -webkit-text-stroke: 3px rgba(255, 255, 255, 0.1);
+  -webkit-text-stroke: 1px rgba(255, 255, 255, 0.1);
   text-transform: uppercase;
   position: absolute;
   z-index: 0;
 }
 
 .outline-box {
-  border: 3px solid rgba(255, 255, 255, 0.1);
-  width: 700px;
-  height: 400px;
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  width: 350px;
+  height: 200px;
   position: absolute;
   z-index: 0;
 }
@@ -161,20 +169,20 @@ span {
 .img1-text {
   position: absolute;
   color: #ffffff;
-  bottom: -150px;
-  right: -300px;
+  bottom: -95px;
+  right: -160px;
   opacity: 0;
 }
 .img1-text h1 {
-  font-size: 80px;
+  font-size: 35px;
 }
 .img-text {
   position: absolute;
   color: #ffffff;
-  bottom: -80px;
-  right: -300px;
+  bottom: -50px;
+  right: -60px;
   opacity: 0;
 }
 .img-text h1 {
-  font-size: 80px;
+  font-size: 35px;
 }

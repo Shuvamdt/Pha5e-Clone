@@ -13,14 +13,19 @@ let outlineBox = document.querySelectorAll(".outline-box");
 var tl = gsap.timeline();
 tl.from(".title h1", {
   y: 200,
-  duration: 1,
-  delay: 0.3,
+  duration: 0.7,
+  stagger: 0.2,
 });
+
 tl.from([img1, img2, img3, img4, outlineBox], {
   scale: 0,
-  duration: 1,
+  duration: 0.8,
   opacity: 0,
   stagger: 0.1,
+});
+tl.from(".outline-text", {
+  opacity: 0,
+  duration: 0.7,
 });
 
 let lastScroll = 0;
